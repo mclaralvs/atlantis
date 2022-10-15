@@ -12,9 +12,11 @@ let telefone = new Telefone()
 telefone.ddd = "012"
 telefone.numero = "123456789"
 cliente.telefones.push(telefone)
-telefone.ddd = "012"
-telefone.numero = "987654321"
-cliente.telefones.push(telefone)
+
+let telefone2 = new Telefone()
+telefone2.ddd = "012"
+telefone2.numero = "987654321"
+cliente.telefones.push(telefone2)
 
 let endereco = new Endereco()
 endereco.rua = `R. do Catete`
