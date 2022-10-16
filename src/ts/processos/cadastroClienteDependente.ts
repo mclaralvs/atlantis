@@ -26,9 +26,7 @@ export default class CadastroClienteDependente extends Processo {
                     let nomeSocial = this.entrada.receberTexto('| Qual o nome social do novo cliente dependente?')
                     let dataNascimento = this.entrada.receberData('| Qual a data de nascimento?')
 
-                    let titular = this.clientes[index]
-
-                    let dependente = new Cliente(nome, nomeSocial, dataNascimento, titular)
+                    let dependente = new Cliente(nome, nomeSocial, dataNascimento)
 
                     this.processo = new CadastrarDocumentosCliente(dependente);
                     this.processo.processar();
