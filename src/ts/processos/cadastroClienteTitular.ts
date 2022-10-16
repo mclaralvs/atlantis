@@ -2,6 +2,7 @@ import Processo from "../abstracoes/processo";
 import Armazem from "../dominio/armazem";
 import Cliente from "../modelos/cliente";
 import CadastrarDocumentosCliente from "./cadastrarDocumentosCliente";
+import CadastrarAcomodacaoCliente from "./cadastroAcomocacaoCliente";
 import CadastroEndereco from "./cadastroEndereco";
 import CadastroTelefone from "./cadastroTelefone";
 
@@ -17,6 +18,9 @@ export default class CadastroClienteTitular extends Processo {
         this.processo.processar()
 
         this.processo = new CadastroTelefone(cliente)
+        this.processo.processar()
+
+        this.processo = new CadastrarAcomodacaoCliente(cliente)
         this.processo.processar()
 
         this.processo = new CadastrarDocumentosCliente(cliente)

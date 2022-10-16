@@ -11,6 +11,7 @@ export default class MenuEditarCliente implements Menu {
         console.log(`| 3 - Endereço`)
         console.log(`| 4 - Telefones`)
         console.log(`| 5 - Documentos`)
+        console.log(`| 6 - Acomodação`)
         console.log(`****************************`)
         console.log(`| 0 - Sair`)
         console.log(`----------------------\n`)

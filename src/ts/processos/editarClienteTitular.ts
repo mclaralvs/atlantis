@@ -1,11 +1,11 @@
 import Processo from "../abstracoes/processo";
 import Armazem from "../dominio/armazem";
 import MenuEditarCliente from "../menus/menuEditarCliente";
-import MenuTipoDocumento from "../menus/menuTipoDocumento";
 import Cliente from "../modelos/cliente";
 import Documento from "../modelos/documento";
 import Endereco from "../modelos/endereco";
 import Telefone from "../modelos/telefone";
+import CadastrarAcomodacaoCliente from "./cadastroAcomocacaoCliente";
 
 export default class EditarClienteTitular extends Processo {
     private clientes: Cliente[]
@@ -80,6 +80,9 @@ export default class EditarClienteTitular extends Processo {
                                 }
                             }
                             break;
+                        case 6: 
+                            this.processo = new CadastrarAcomodacaoCliente(this.clientes[index])
+                            this.processo.processar()
                         case 0:
                             console.log("Até mais!");
                             break;
