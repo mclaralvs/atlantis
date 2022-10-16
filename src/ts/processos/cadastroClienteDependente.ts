@@ -13,9 +13,10 @@ export default class CadastroClienteDependente extends Processo {
     }
 
     processar(): void {
-        console.log('Iniciando o cadastro de um novo cliente dependente...')
         var processo = false
         let responsavel = this.entrada.receberTexto('| Insira o número do documento do cliente responsável: ')
+
+        console.log('Iniciando o cadastro de um novo cliente dependente...')
 
         for (let index = 0; index < this.clientes.length; index++) {
             for (let indexDoc = 0; indexDoc < this.clientes[index].Documentos.length; indexDoc++) {
@@ -25,7 +26,9 @@ export default class CadastroClienteDependente extends Processo {
                     let nomeSocial = this.entrada.receberTexto('| Qual o nome social do novo cliente dependente?')
                     let dataNascimento = this.entrada.receberData('| Qual a data de nascimento?')
 
-                    let dependente = new Cliente(nome, nomeSocial, dataNascimento)
+                    let titular = this.clientes[index]
+
+                    let dependente = new Cliente(nome, nomeSocial, dataNascimento, titular)
 
                     this.processo = new CadastrarDocumentosCliente(dependente);
                     this.processo.processar();
