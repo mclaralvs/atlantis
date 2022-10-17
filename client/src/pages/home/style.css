@@ -1,0 +1,40 @@
+.container-home {
+    margin-inline: auto !important;
+    margin-top: 30px;
+    width: 900px;
+}
+
+.container-home #chamada h1 {
+    color: #FF7062;
+    font-family: 'Courgette', cursive !important;
+    font-size: 3em;
+    margin-left: 20%;
+}
+
+.acomodacoes-collection {
+    margin-top: 30px;
+}
+
+.acomodacoes-collection h2 {
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.acomodacoes-collection-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+    margin-bottom: 50px;
+}
+
+.acomodacoes-collection-cards .btn-outline-dark {
+    color: #FF7062;
+    border: 1px solid #FF7062;
+    transition: 1s;
+}
+
+.acomodacoes-collection-cards .btn-outline-dark:hover {
+    background-color: #FF7062;
+    border: 1px solid #FF7062;
+    transition: 1s;
+}
