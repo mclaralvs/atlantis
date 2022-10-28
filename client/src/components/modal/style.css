@@ -1,0 +1,14 @@
+.modal-footer .btn-outline-dark {
+    color: #FF7062;
+    border: 1px solid #FF7062;
+    transition: 1s;
+}
+
+.modal-footer .btn-outline-dark:hover,
+.modal-footer .btn-outline-dark:active,
+.modal-footer .btn-outline-dark:focus {
+    color: white;
+    background-color: #FF7062;
+    border: 1px solid #FF7062;
+    transition: 1s;
+}

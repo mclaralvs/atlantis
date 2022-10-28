@@ -1,18 +1,28 @@
 .container-home {
     margin-inline: auto !important;
     margin-top: 30px;
-    width: 900px;
+    width: 1050px;
+    padding: 50px;
+    margin-bottom: 50px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+    border: 1px solid rgba(255, 255, 255, 0.23);
 }
 
 .container-home #chamada h1 {
     color: #FF7062;
     font-family: 'Courgette', cursive !important;
     font-size: 3em;
-    margin-left: 20%;
+    margin-left: 220px;
 }
 
 .acomodacoes-collection {
     margin-top: 30px;
+    margin-left: 20px;
 }
 
 .acomodacoes-collection h2 {
@@ -24,7 +34,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 20px;
-    margin-bottom: 50px;
 }
 
 .acomodacoes-collection-cards .btn-outline-dark {
@@ -33,7 +42,10 @@
     transition: 1s;
 }
 
-.acomodacoes-collection-cards .btn-outline-dark:hover {
+.acomodacoes-collection-cards .btn-outline-dark:hover,
+.acomodacoes-collection-cards .btn-outline-dark:active,
+.acomodacoes-collection-cards .btn-outline-dark:focus {
+    color: white;
     background-color: #FF7062;
     border: 1px solid #FF7062;
     transition: 1s;

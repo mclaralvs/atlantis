@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import ModalForm from '../modal/modal';
+import ModalAcomodacao from '../modal/modalAcomodacao';
 
 function CardLink(props: any) {
     return (
@@ -33,7 +36,11 @@ function CardLink(props: any) {
 
             <Card.Body>
 
-                <Button variant="outline-dark">Reservar!</Button>
+                <ModalForm 
+                    button='Reservar!' 
+                    title='Reserve para um cliente!' 
+                    body={ <ModalAcomodacao /> }
+                />
 
             </Card.Body>
 

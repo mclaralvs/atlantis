@@ -29,7 +29,7 @@ export default function Home() {
                 </div>
 
                 <div className="acomodacoes-collection">
-                    <h2>Conheça nossas acomodações e faça sua reserva:</h2>
+                    <h2>Reservar acomodação para o cliente:</h2>
 
                     <div className="acomodacoes-collection-cards">
 
@@ -43,6 +43,7 @@ export default function Home() {
                             garagem="0"
                             clima="Sim"
                         />
+
                         <CardLink
                             img={FamiliaSimples}
                             title="Familia Simples"
@@ -53,6 +54,7 @@ export default function Home() {
                             garagem="1"
                             clima="Sim"
                         />
+
                         <CardLink
                             img={FamiliaMais}
                             title="Familia Mais"
@@ -63,6 +65,7 @@ export default function Home() {
                             garagem="2"
                             clima="Sim"
                         />
+
                         <CardLink
                             img={FamiliaSuper}
                             title="Familia Super"
@@ -97,7 +100,6 @@ export default function Home() {
                         />
 
                     </div>
-
 
                 </div>
 

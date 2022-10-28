@@ -1,0 +1,33 @@
+.container-cadastro {
+    padding: 20px;
+    margin-bottom: 50px;
+    margin-inline: auto;
+    width: 1000px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+    border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.container-cadastro .btn-outline-dark {
+    border: 1px solid #FF7062;
+    color: #FF7062;
+    transition: 1s;
+}
+
+.container-cadastro .btn-outline-dark:hover,
+.container-cadastro .btn-outline-dark:active,
+.container-cadastro .btn-outline-dark:focus {
+    background-color: #FF7062;
+    border: 1px solid #FF7062;
+    transition: 1s;
+    color: white;
+}
+
+.form-control {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
