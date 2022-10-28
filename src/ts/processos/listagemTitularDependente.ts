@@ -1,6 +1,6 @@
 import Processo from "../abstracoes/processo";
 import Armazem from "../dominio/armazem";
-import ImpressaorCliente from "../impressores/impressorCliente";
+import ImpressorClienteDependente from "../impressores/impressorClienteDependente";
 import Impressor from "../interfaces/impressor";
 import Cliente from "../modelos/cliente";
 
@@ -25,7 +25,7 @@ export default class ListagemTitularDependente extends Processo {
                 if (responsavel == this.clientes[index].Documentos[indexDoc].Numero) {
                     processo = true
                     this.clientes[index].Dependentes.forEach(dependente => {
-                        this.impressor = new ImpressaorCliente(dependente)
+                        this.impressor = new ImpressorClienteDependente(dependente)
                         console.log(this.impressor.imprimir())
                     })
                 }
