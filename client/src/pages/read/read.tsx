@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import Navigation from "../../components/navbar/navbar";
 import ReadClienteDependente from "./readClienteDependente";

@@ -1,9 +1,23 @@
+import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 // importing css ✨
 import './style.css'
 
 export default function CreateClienteTitular() {
+    const [telefone, setTelefone] = useState([{ 'ddd': '', 'numero': '' }])
+
+    const handleInputChange = (e: any, index: any) => {
+        const { name, value } = e.target;
+        const list = [...telefone];
+        //list[index][name] = value;
+        setTelefone(list);
+    };
+
+    const handleAddClick = () => {
+        setTelefone([...telefone, { ddd: "", numero: "" }]);
+    };
+
     return (
         <>
 
@@ -70,21 +84,25 @@ export default function CreateClienteTitular() {
 
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    {telefone.map((field, index) => {
+                        return (
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 
-                        <Form.Label>Telefone(s)</Form.Label>
+                                <Form.Label>Telefone(s)</Form.Label>
 
-                        <Form.Control
-                            type="tel"
-                            placeholder="Insira o ddd"
-                        />
+                                <Form.Control
+                                    type="tel"
+                                    placeholder="Insira o ddd"
+                                />
 
-                        <Form.Control
-                            type="tel"
-                            placeholder="Insira o telefone"
-                        />
+                                <Form.Control
+                                    type="tel"
+                                    placeholder="Insira o telefone"
+                                />
 
-                    </Form.Group>
+                            </Form.Group>
+                        )
+                    })}
 
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 
