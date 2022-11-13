@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { BsXCircle, BsPlusCircle } from 'react-icons/bs'
 
 // importing css ✨
 import './style.css'
 
 export default function CreateClienteTitular() {
-    const [telefone, setTelefone] = useState([{ 'ddd': '', 'numero': '' }])
+    const [formValue, setFormValue] = useState([{}])
+    const [telefone, setTelefone] = useState([{ 'ddd': "", 'numero': "" }])
+    const [documento, setDocumento] = useState([{ 'tipo': "", 'numero': "", "data": "" }])
 
     const handleInputChange = (e: any, index: any) => {
         const { name, value } = e.target;
@@ -14,9 +17,25 @@ export default function CreateClienteTitular() {
         setTelefone(list);
     };
 
-    const handleAddClick = () => {
+    const handleAddTelefone = () => {
         setTelefone([...telefone, { ddd: "", numero: "" }]);
     };
+
+    let handleRemoveTelefone = (indexTel: any) => {
+        let newTelefone = [...telefone];
+        newTelefone.splice(indexTel, 1);
+        setTelefone(newTelefone)
+    }
+
+    const handleAddDocument = () => {
+        setDocumento([...documento, { tipo: "", numero: "", data: "" }]);
+    };
+
+    let handleRemoveDocument = (indexDoc: any) => {
+        let newDocuments = [...documento];
+        newDocuments.splice(indexDoc, 1);
+        setDocumento(newDocuments)
+    }
 
     return (
         <>
@@ -84,7 +103,7 @@ export default function CreateClienteTitular() {
 
                     </Form.Group>
 
-                    {telefone.map((field, index) => {
+                    {telefone.map((field, indexTel) => {
                         return (
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 
@@ -92,42 +111,72 @@ export default function CreateClienteTitular() {
 
                                 <Form.Control
                                     type="tel"
+                                    value={field.ddd}
                                     placeholder="Insira o ddd"
                                 />
 
                                 <Form.Control
                                     type="tel"
+                                    value={field.numero}
                                     placeholder="Insira o telefone"
                                 />
 
                             </Form.Group>
+
                         )
                     })}
 
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Button variant="outline-dark" onClick={handleAddTelefone} id="botao-criar-tel"><BsPlusCircle /></Button>
 
-                        <Form.Label>Documento(s)</Form.Label>
+                    {telefone.length > 1 ?
+                        <Button variant="outline-dark" onClick={handleRemoveTelefone} id="botao-criar-tel"><BsXCircle /></Button>
 
-                        <Form.Select>
+                        :
 
-                            <option disabled>Selecione o tipo de documento</option>
-                            <option value="1">Cadastro de Pessoa Física</option>
-                            <option value="2">Registro Geral</option>
-                            <option value="3">Passaporte</option>
+                        <></>
+                    }
 
-                        </Form.Select>
+                    {documento.map((field, indexDoc) => {
+                        return (
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 
-                        <Form.Control
-                            type="tel"
-                            placeholder="Insira o novo número do documento"
-                        />
+                                <Form.Label>Documento(s)</Form.Label>
 
-                        <Form.Control
-                            type="tel"
-                            placeholder="Insira a data de expedição no formato dd/mm/yyyy"
-                        />
+                                <Form.Select>
 
-                    </Form.Group>
+                                    <option disabled>Selecione o tipo de documento</option>
+                                    <option value="1">Cadastro de Pessoa Física</option>
+                                    <option value="2">Registro Geral</option>
+                                    <option value="3">Passaporte</option>
+
+                                </Form.Select>
+
+                                <Form.Control
+                                    type="tel"
+                                    value={field.numero}
+                                    placeholder="Insira o número do documento"
+                                />
+
+                                <Form.Control
+                                    type="tel"
+                                    value={field.data}
+                                    placeholder="Insira a data de expedição no formato dd/mm/yyyy"
+                                />
+
+                            </Form.Group>
+
+                        )
+                    })}
+
+                    <Button variant="outline-dark" onClick={handleAddDocument} id="botao-criar-tel"><BsPlusCircle /></Button>
+
+                    {documento.length > 1 ?
+                        <Button variant="outline-dark" onClick={handleRemoveDocument} id="botao-criar-tel"><BsXCircle /></Button>
+
+                        :
+
+                        <></>
+                    }
 
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
 
