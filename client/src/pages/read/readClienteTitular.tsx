@@ -11,6 +11,8 @@ import './style.css'
 import ModalForm from "../../components/modal/modal";
 import ModalEditarClienteTitular from "../../components/modal/modalEditarClienteTitular";
 import ModalPerfilClienteTitular from "../../components/modal/modalPerfilClienteTitular";
+import ModalExcluirDocumento from "../../components/modal/modalExcluirDocumento";
+import ModalExcluirTelefone from "../../components/modal/modalExcluirTelefone";
 
 export default function ReadClienteTitular() {
     return (
@@ -52,6 +54,18 @@ export default function ReadClienteTitular() {
                             </td>
                             <td>
                                 <Button variant="outline-dark">Excluir!</Button>
+
+                                <ModalForm
+                                    button='Excluir documento!'
+                                    title='Exclua documento do cliente!'
+                                    body={<ModalExcluirDocumento />}
+                                />
+
+                                <ModalForm
+                                    button='Excluir telefone!'
+                                    title='Exclua telefone do cliente!'
+                                    body={<ModalExcluirTelefone />}
+                                />
                             </td>
 
                         </tr>
@@ -76,6 +90,18 @@ export default function ReadClienteTitular() {
                             </td>
                             <td>
                                 <Button variant="outline-dark">Excluir!</Button>
+
+                                <ModalForm
+                                    button='Excluir documento!'
+                                    title='Exclua documento do cliente!'
+                                    body={<ModalExcluirDocumento />}
+                                />
+
+                                <ModalForm
+                                    button='Excluir telefone!'
+                                    title='Exclua telefone do cliente!'
+                                    body={<ModalExcluirTelefone />}
+                                />
                             </td>
 
                         </tr>
